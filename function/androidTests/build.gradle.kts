@@ -49,6 +49,7 @@ dependencies {
     api("org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version")
 
     api("androidx.arch.core:core-testing:2.1.0")
+    api("androidx.test:core-ktx:1.4.0")
 
     api("androidx.test.ext:junit:1.1.2")
     api("androidx.test.espresso:espresso-core:$espresso_version")

@@ -32,6 +32,12 @@ android {
         // but continue the build even when errors are found:
         isAbortOnError = false
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 tasks.withType<JavaCompile>() {
