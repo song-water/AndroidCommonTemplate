@@ -57,6 +57,9 @@ dependencies {
 
     api("com.tencent:mmkv-static:1.2.10")
 
+    // 仅安卓，所以使用 fastkv 即可，如果是 KMM 或者 KMP，建议 MMKV。
+    implementation("io.github.billywei01:fastkv:1.0.2")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
