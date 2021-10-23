@@ -11,7 +11,7 @@ import org.robolectric.annotation.Config
 class HelloRobolectricTestRunner(testClass: Class<*>?) : RobolectricTestRunner(testClass) {
 
     companion object {
-        private const val DEFAULT_SDK = 28
+        private const val DEFAULT_SDK = 30
     }
 
     override fun buildGlobalConfig(): Config {

@@ -49,8 +49,8 @@ dependencies {
 
     api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     api("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2") // kotlin_coroutines_version
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2") // kotlin_coroutines_version
     api("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
     api("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.13.0")
     api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
