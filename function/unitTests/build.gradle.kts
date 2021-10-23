@@ -40,6 +40,8 @@ dependencies {
     api("junit:junit:$junit_version")
     api("com.tngtech.junit.dataprovider:junit4-dataprovider:$data_provider_version")
 
+    api("com.approvaltests:approvaltests:12.1.1")
+
     api("io.mockk:mockk:$mockk_version")
     api("org.mockito:mockito-core:$mockito_version")
     // api "org.mockito:mockito-inline:3.3.0"
