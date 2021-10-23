@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common application theme. -->
+    <style name="FullScreenDialogTheme" parent="@style/FullScreenDialogBasicTheme">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="FullScreenDialogBasicTheme" parent="Theme.AppCompat.DayNight.Dialog" />
+
+</resources>
