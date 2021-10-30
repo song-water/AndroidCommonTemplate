@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.water.song.template.demo">
+
+    <application>
+        <activity
+            android:name=".DemoShowActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ActivityTCardGallery"
+            android:exported="false" />
+    </application>
+
+</manifest>

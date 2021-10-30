@@ -57,6 +57,11 @@ dependencies {
 
     api("com.tencent:mmkv-static:1.2.10")
 
+    debugApi("com.squareup.leakcanary:leakcanary-android:2.7")
+    // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
+//    debugApi("com.github.markzhai:blockcanary-android:1.5.0")
+//    releaseApi("com.github.markzhai:blockcanary-no-op:1.5.0")
+
     // 仅安卓，所以使用 fastkv 即可，如果是 KMM 或者 KMP，建议 MMKV。
     implementation("io.github.billywei01:fastkv:1.0.2")
 

@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("plugin.serialization")
     id("kotlin-parcelize")
@@ -7,16 +7,17 @@ plugins {
 
 android {
     compileSdk = compile_version
-    buildToolsVersion = build_tools_version
+    buildToolsVersion =build_tools_version
+    resourcePrefix = "demo_"
 
     defaultConfig {
-        applicationId = "com.water.song.template"
         minSdk = min_sdk_version
         targetSdk = target_sdk_version
-        versionCode = 1
-        versionName = "1.0"
+        // versionCode = 1
+        // versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -32,23 +33,11 @@ android {
         // but continue the build even when errors are found:
         isAbortOnError = false
     }
-
-    testOptions {
-        unitTests {
-            isIncludeAndroidResources = true
-        }
-    }
-}
-
-tasks.withType<JavaCompile>() {
-    options.encoding = "UTF-8"
 }
 
 dependencies {
     implementation(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
     implementation(project(":common"))
-    implementation(project(":biz_home"))
-    implementation(project(":biz_demo"))
 
     testImplementation(project(":func_unitTests"))
     androidTestImplementation(project(":func_androidTests"))

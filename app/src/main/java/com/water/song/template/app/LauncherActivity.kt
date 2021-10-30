@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.Window
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
-import com.water.song.template.home.SplashActivity
+import com.water.song.template.demo.DemoShowActivity
 
 /**
  * @author Water-Song
@@ -19,7 +19,7 @@ class LauncherActivity : AppCompatActivity() {
         if (shouldFinishImmediately(isTaskRoot, intent)) {
             finish()
         } else {
-            startActivity(Intent(this, SplashActivity::class.java))
+            startActivity(Intent(this, DemoShowActivity::class.java))
         }
     }
 
