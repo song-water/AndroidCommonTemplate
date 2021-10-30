@@ -11,6 +11,16 @@ class WLog {
         }
 
         @JvmStatic
+        fun d(tag: String, message: String): Int {
+            return android.util.Log.d(tag, message)
+        }
+
+        @JvmStatic
+        fun d(tag: String, throwable: Throwable): Int {
+            return android.util.Log.d(tag, throwable.message ?: "")
+        }
+
+        @JvmStatic
         fun w(tag: String, message: String): Int {
             return android.util.Log.w(tag, message)
         }
