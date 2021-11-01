@@ -9,6 +9,7 @@ import android.view.WindowManager
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import com.water.song.template.common.util.applyWindowInsets
 import com.water.song.template.common.util.makeImmersive
 
 /**
@@ -17,6 +18,9 @@ import com.water.song.template.common.util.makeImmersive
 class FullScreenDialog : DialogFragment() {
     companion object {
         const val TAG = "FullScreenDialog"
+
+        @JvmStatic
+        fun getInstance() = FullScreenDialog()
     }
 
     fun show(fm: FragmentManager) {
@@ -25,7 +29,7 @@ class FullScreenDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.FullScreenDialogTheme)
+        setStyle(STYLE_NORMAL, R.style.FullScreenDialogTheme)
     }
 
     override fun onStart() {
@@ -39,16 +43,21 @@ class FullScreenDialog : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.dialog_full_screen, container, false)
-        dialog?.window?.attributes?.let { attr ->
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                attr.layoutInDisplayCutoutMode =
-                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    attr.fitInsetsTypes = WindowInsetsCompat.Type.statusBars()
+        dialog?.window?.let { win ->
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+                win.attributes?.let { attr ->
+                    attr.layoutInDisplayCutoutMode =
+                        WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                        attr.fitInsetsTypes = WindowInsetsCompat.Type.statusBars()
+                    }
                 }
+            } else {
+                view.fitsSystemWindows = true
             }
-
+            win.applyWindowInsets(view)
         }
+        isCancelable = true
         return view
     }
 }
