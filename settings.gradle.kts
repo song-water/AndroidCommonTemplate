@@ -11,6 +11,8 @@ rootProject.name = "AndroidCommonTemplate"
 // modules configuration
 include(":app")
 include(":common")
+include(":lintaar")
+include(":lintrules")
 composeSubProject("function", "func_")
 composeSubProject("business", "biz_")
 

@@ -1,0 +1,41 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'com.android.lint'
+}
+
+dependencies {
+
+    def lintVersion = '30.0.0'
+    compileOnly "com.android.tools.lint:lint-api:$lintVersion"
+    compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
+
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "com.android.tools.lint:lint:$lintVersion"
+    testImplementation "com.android.tools.lint:lint-tests:$lintVersion"
+    testImplementation "com.android.tools:testutils:$lintVersion"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.water.song.template.lint.lintrules.WasterLintRegistry")
+    }
+}
+
+configurations {
+    lintJarOutput
+}
+
+dependencies {
+    lintJarOutput files(jar)
+}
+
+defaultTasks 'assemble'
+
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}

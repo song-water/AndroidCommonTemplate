@@ -57,6 +57,8 @@ dependencies {
 
     api("com.tencent:mmkv-static:1.2.10")
 
+    api(project(":lintaar"))
+
     debugApi("com.squareup.leakcanary:leakcanary-android:2.7")
     // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
 //    debugApi("com.github.markzhai:blockcanary-android:1.5.0")
