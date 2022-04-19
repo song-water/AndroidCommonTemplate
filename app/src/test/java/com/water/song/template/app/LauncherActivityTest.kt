@@ -13,6 +13,7 @@ import com.water.song.template.home.SplashActivity
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Shadows.shadowOf
@@ -53,6 +54,7 @@ class LauncherActivityTest {
     }
 
     @Test
+    @Ignore("Ignore for debug demo")
     fun test_onCreate_checkStartSplashActivity() {
         val startIntent = prepareLauncherIntent()
 
@@ -85,7 +87,6 @@ class LauncherActivityTest {
     @Test
     fun test_shouldFinishImmediately() {
         val startIntent = prepareLauncherIntent()
-
         ActivityScenario.launch<LauncherActivity>(startIntent).use { scenario ->
             scenario.moveToState(Lifecycle.State.CREATED)
             scenario.onActivity { activity ->

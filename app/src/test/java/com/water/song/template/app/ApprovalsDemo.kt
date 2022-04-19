@@ -1,7 +1,5 @@
 package com.water.song.template.app
 
-import android.net.Uri
-import android.os.Bundle
 import com.water.song.template.unittests.DataProviderUtils
 import org.approvaltests.Approvals
 import org.junit.Test

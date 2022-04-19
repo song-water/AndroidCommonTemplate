@@ -36,7 +36,7 @@ android {
 
 dependencies {
     api(fileTree("dir" to "libs", "include" to arrayOf("*.jar")))
-    api("androidx.core:core-ktx:1.6.0")
+    api("androidx.core:core-ktx:1.7.0")
     api("androidx.appcompat:appcompat:1.3.1")
     api("androidx.activity:activity:1.3.1")
     api("androidx.activity:activity-ktx:1.3.1")
@@ -49,11 +49,11 @@ dependencies {
 
     api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     api("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2") // kotlin_coroutines_version
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2") // kotlin_coroutines_version
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version") // kotlin_coroutines_version
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version") // kotlin_coroutines_version
     api("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
     api("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.13.0")
-    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
     api("com.tencent:mmkv-static:1.2.10")
 

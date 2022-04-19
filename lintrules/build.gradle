@@ -9,7 +9,7 @@ dependencies {
     def lintVersion = '30.0.0'
     compileOnly "com.android.tools.lint:lint-api:$lintVersion"
     compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20"
 
     testImplementation "junit:junit:4.13.2"
     testImplementation "com.android.tools.lint:lint:$lintVersion"
